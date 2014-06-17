@@ -1,0 +1,9 @@
+Package: pradist
+Type: Package
+Title: Addition distributions for PRA
+Version: 1.0
+Date: 2014-06-17
+Author: Paul Thomas Britton
+Maintainer: Paul Thomas Britton <paul.t.britton@nasa.gov>
+Description: Generate samples from triangle distributions, dirichlet distributions and a reparameterized lognormal distribution.
+License: GPL-2
