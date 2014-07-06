@@ -47,40 +47,11 @@ Paul Thomas Britton
 \code{\link{logndist}}, \code{\link{triadist}}
 }
 \examples{
-D <- dirichlet(N=20,300,20,1)
-print(D$b1)
+diri <- dirichlet(N=20,300,20,1)
+print(diri$b1)
 ## or
 E <- dirichlet(N=10,c(400,20))
 print(E$b2)
-
-## The function is currently defined as
-function (N, ...) 
-{
-    args <- list(...)
-    len <- length(args)
-    if (len == 1) {
-        AlphaVector <- as.list(args[[1]])
-        k <- length(AlphaVector)
-    }
-    else {
-        AlphaVector <- args
-        k <- len
-    }
-    if (k < 2) 
-        stop(paste("k=", k, "; dirichlet() requires k > 1"))
-    Y <- list()
-    V <- rep(0, N)
-    n <- rep("", k)
-    for (i in 1:k) {
-        Y[[i]] <- rgamma(N, shape = AlphaVector[[i]], rate = 1)
-        V <- V + Y[[i]]
-        n[i] <- paste("a", i, sep = "")
-    }
-    dividebyV <- function(X) X/V
-    diri <- lapply(Y, dividebyV)
-    names(diri) <- n
-    return(diri)
-  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

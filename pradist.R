@@ -58,7 +58,7 @@ dirichlet <- function(N,...) {
 	for (i in 1:k) {
 		Y[[i]] <- rgamma(N,shape=AlphaVector[[i]],rate=1)
 		V <- V + Y[[i]]
-		n[i] <- paste("a",i,sep="")
+		n[i] <- paste("b",i,sep="")
 	}
 	dividebyV <- function(X) X/V
 	diri <- lapply(Y,dividebyV)
